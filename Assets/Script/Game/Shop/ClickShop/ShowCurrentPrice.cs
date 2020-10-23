@@ -7,19 +7,14 @@ public class ShowCurrentPrice : MonoBehaviour
 {
     public ShowPrice showPrice;
     public int upgradeNumber;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         this.ShowCurrentUpgradePrice(this.upgradeNumber);
     }
 
     public void ShowCurrentUpgradePrice(int upgradeNumber)
     {
-        gameObject.GetComponent<Text>().text = showPrice.nextprice[upgradeNumber - 1].ToString();
+        gameObject.GetComponent<Text>().text = showPrice.nextPrice[upgradeNumber - 1].ToString();
     }
 }

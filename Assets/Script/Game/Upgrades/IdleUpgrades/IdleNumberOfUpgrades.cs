@@ -7,14 +7,10 @@ public class IdleNumberOfUpgrades : MonoBehaviour
 {
     public int[] upgradesCount;
     public Player player;
-    void Start()
+    
+    private void Start()
     {
         Debug.Log("NumberOf" + 1);
-    }
-
-    void Update()
-    {
-        
     }
 
     public void ReturnUpgrade(int upgradeNumber)

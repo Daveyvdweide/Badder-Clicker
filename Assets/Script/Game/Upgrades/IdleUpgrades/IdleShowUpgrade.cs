@@ -7,8 +7,9 @@ public class IdleShowUpgrade : MonoBehaviour
 {
     public IdleNumberOfUpgrades idleNumberOfUpgrades;
     public int idleUpgradeNumber;
-    // Update is called once per frame
-    void Update()
+    
+
+    private void Update()
     {
         this.ReturnUpgradeNumber();
     }

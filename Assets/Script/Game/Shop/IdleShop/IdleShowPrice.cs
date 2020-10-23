@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class IdleShowPrice : MonoBehaviour
 {
-    public float[] startprice;
-    public float[] idlenextprice;
+    public float[] startPrice;
+    public float[] idlenextPrice;
 
     public IdleNumberOfUpgrades idleNumberOfUpgrades;
     void Start()
@@ -22,31 +22,31 @@ public class IdleShowPrice : MonoBehaviour
 
     void CalculatePrice()
     {
-        for (int i = 0; i < this.startprice.Length; i++)
+        for (int i = 0; i < this.startPrice.Length; i++)
         {
-            if(this.idlenextprice[i] < 100)
+            if(this.idlenextPrice[i] < 100)
             {
-                this.idlenextprice[i] = this.startprice[i] + (this.startprice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 1.30f * (i + 1)));
+                this.idlenextPrice[i] = this.startPrice[i] + (this.startPrice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 1.30f * (i + 1)));
             }
-            if(this.idlenextprice[i] < 300)
+            if(this.idlenextPrice[i] < 300)
             {
-                this.idlenextprice[i] = this.startprice[i] + (this.startprice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 2.60f * (i + 1)));
+                this.idlenextPrice[i] = this.startPrice[i] + (this.startPrice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 2.60f * (i + 1)));
             }
-            if(this.idlenextprice[i] < 900)
+            if(this.idlenextPrice[i] < 900)
             {
-                this.idlenextprice[i] = this.startprice[i] + (this.startprice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 3.90f * (i + 1)));
+                this.idlenextPrice[i] = this.startPrice[i] + (this.startPrice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 3.90f * (i + 1)));
             }
-            if(this.idlenextprice[i] < 2700)
+            if(this.idlenextPrice[i] < 2700)
             {
-                this.idlenextprice[i] = this.startprice[i] + (this.startprice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 4.30f * (i + 1)));
+                this.idlenextPrice[i] = this.startPrice[i] + (this.startPrice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 4.30f * (i + 1)));
             }
-            if(this.idlenextprice[i] < 7100)
+            if(this.idlenextPrice[i] < 7100)
             {
-                this.idlenextprice[i] = this.startprice[i] + (this.startprice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 6.60f * (i + 1)));
+                this.idlenextPrice[i] = this.startPrice[i] + (this.startPrice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 6.60f * (i + 1)));
             }
             else
             {
-                this.idlenextprice[i] = this.startprice[i] + (this.startprice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 10f * (i + 1)));        
+                this.idlenextPrice[i] = this.startPrice[i] + (this.startPrice[i] / 10 + (idleNumberOfUpgrades.upgradesCount[i] * 10f * (i + 1)));        
             }
         }
     }

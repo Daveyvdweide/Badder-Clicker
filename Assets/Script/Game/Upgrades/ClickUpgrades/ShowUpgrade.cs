@@ -7,8 +7,8 @@ public class ShowUpgrade : MonoBehaviour
 {
     public NumberOfUpgrades numberOfUpgrades;
     public int upgradeNumber;
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
         this.ReturnUpgradeNumber();
     }

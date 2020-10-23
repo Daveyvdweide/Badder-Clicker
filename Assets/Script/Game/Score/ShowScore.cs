@@ -5,27 +5,25 @@ using UnityEngine.UI;
 
 public class ShowScore : MonoBehaviour
 {
-    private GameObject ScoreManager;
+    private GameObject scoreManager;
     private float currentScore;
     private int showScore;
     private Text scoreText;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         this.scoreText = GetComponent<Text>();
-        this.ScoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
+        this.scoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         this.GetScore();
     }
 
-    void GetScore()
+    public void GetScore()
     {
-        this.currentScore = this.ScoreManager.GetComponent<ScoreHandler>().score;
+        this.currentScore = this.scoreManager.GetComponent<ScoreHandler>().score;
         this.showScore = Mathf.RoundToInt(this.currentScore);
         this.scoreText.text = showScore.ToString() + " candy!!";
     }

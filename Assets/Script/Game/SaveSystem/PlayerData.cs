@@ -6,26 +6,25 @@ using UnityEngine;
 public class PlayerData
 {
     public float score;
-    public float scoremultiplier;
-    public float scorepersecond;
+    public float scoreMultiplier;
+    public float scorePerSecond;
 
     public int[] upgradeCount = new int[19];
-    public int idleupgradecount;
-    public int selectedcharacter;
-
+    public int idleupgradeCount;
+    public int selectedCharacter;
 
     public PlayerData(Player player)
     {
         score = player.score;
-        scoremultiplier = player.scoremultiplier;
-        scorepersecond = player.scorepersecond;
+        scoreMultiplier = player.scoreMultiplier;
+        scorePerSecond = player.scorePerSecond;
 
         for (int i = 0; i < player.upgradeCount.Length; i++)
         {
             this.upgradeCount[i] = player.upgradeCount[i];
         }
 
-        idleupgradecount = player.idleupgradecount;
-        selectedcharacter = player.selectedcharacter;
+        idleupgradeCount = player.idleupgradeCount;
+        selectedCharacter = player.selectedCharacter;
     }
 }

@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShowSelectedCharacter : MonoBehaviour
+public class ShowselectedCharacter : MonoBehaviour
 {
     public CharacterManager characterManager;
     public Image character;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         this.character.sprite = characterManager.characterImages[characterManager.characterIdOnScreen];
     }

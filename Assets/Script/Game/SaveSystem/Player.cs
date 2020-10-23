@@ -8,25 +8,25 @@ using System;
 public class Player : MonoBehaviour
 {
     public float score;
-    public float scoremultiplier;
-    public float scorepersecond;
+    public float scoreMultiplier;
+    public float scorePerSecond;
 
     public NumberOfUpgrades numberOfUpgrades;
     public IdleNumberOfUpgrades idleNumberOfUpgrades;
     public CharacterManager characterManager;
 
     public int[] upgradeCount = new int[18];
-    public int idleupgradecount;
+    public int idleupgradeCount;
 
-    public int selectedcharacter;
+    public int selectedCharacter;
 
-    void Start()
+    private void Start()
     {
         this.LoadPlayer();
         Debug.Log(this.upgradeCount.Length);
     }
 
-    void Update()
+    private void Update()
     {
         this.SavePlayer();
     }
@@ -35,16 +35,16 @@ public class Player : MonoBehaviour
     public void SavePlayer()
     {
         score = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().score;
-        scoremultiplier = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().scoremultiplier;
-        scorepersecond = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().scorepersecond;
+        scoreMultiplier = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().scoreMultiplier;
+        scorePerSecond = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().scorePerSecond;
 
         for (int i = 0; i < upgradeCount.Length; i++)
         {
             upgradeCount[i] = numberOfUpgrades.upgradesCount[i];
         }
 
-        idleupgradecount = idleNumberOfUpgrades.upgradesCount[0];
-        selectedcharacter = characterManager.characterIdOnScreen;
+        idleupgradeCount = idleNumberOfUpgrades.upgradesCount[0];
+        selectedCharacter = characterManager.characterIdOnScreen;
         SaveSystem.SavePlayer(this);
     }
 
@@ -53,16 +53,16 @@ public class Player : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().score = data.score;
-        GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().scoremultiplier = data.scoremultiplier;
-        GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().scorepersecond = data.scorepersecond;
+        GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().scoreMultiplier = data.scoreMultiplier;
+        GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreHandler>().scorePerSecond = data.scorePerSecond;
 
         for (int i = 0; i < upgradeCount.Length; i++)
         {
             numberOfUpgrades.upgradesCount[i] = data.upgradeCount[i];
         }
 
-        idleNumberOfUpgrades.upgradesCount[0] = data.idleupgradecount;
+        idleNumberOfUpgrades.upgradesCount[0] = data.idleupgradeCount;
 
-        characterManager.characterIdOnScreen = data.selectedcharacter;
+        characterManager.characterIdOnScreen = data.selectedCharacter;
     }
 }

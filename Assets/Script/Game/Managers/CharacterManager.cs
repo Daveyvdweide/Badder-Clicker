@@ -9,12 +9,7 @@ public class CharacterManager : MonoBehaviour
     public Image characterScreen;
     public int characterIdOnScreen = 0;
 
-    void Update()
-    {
-        
-    }
-
-    void SetImage(int characterNumber)
+    public void SetImage(int characterNumber)
     {
         characterScreen.sprite = this.characterImages[characterNumber - 1];
     }

@@ -15,13 +15,12 @@ public class ShopHandler : MonoBehaviour
 
     public ClickingSoundHandler clickingSoundHandler;
 
-    void Start()
+    private void Start()
     {
         this.scoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(this.shop.active)
         {
@@ -31,7 +30,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeOne()
     {
-        float price = showPrice.nextprice[0];
+        float price = showPrice.nextPrice[0];
         float multiplier = 0.2f;
         int id = 1;
 
@@ -46,7 +45,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeTwo()
     {
-        float price = showPrice.nextprice[1];
+        float price = showPrice.nextPrice[1];
         float multiplier = 0.4f;
         int id = 2;
 
@@ -61,7 +60,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeThree()
     {
-        float price = showPrice.nextprice[2];
+        float price = showPrice.nextPrice[2];
         float multiplier = 0.8f;
         int id = 3;
 
@@ -76,7 +75,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeFour()
     {
-        float price = showPrice.nextprice[3];
+        float price = showPrice.nextPrice[3];
         float multiplier = 2;
         int id = 4;
 
@@ -91,7 +90,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeFive()
     {
-        float price = showPrice.nextprice[4];
+        float price = showPrice.nextPrice[4];
         float multiplier = 4;
         int id = 5;
 
@@ -106,7 +105,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeSix()
     {
-        float price = showPrice.nextprice[5];
+        float price = showPrice.nextPrice[5];
         float multiplier = 6;
         int id = 6;
 
@@ -121,7 +120,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeSeven()
     {
-        float price = showPrice.nextprice[6];
+        float price = showPrice.nextPrice[6];
         float multiplier = 8;
         int id = 7;
 
@@ -136,7 +135,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeEight()
     {
-        float price = showPrice.nextprice[7];
+        float price = showPrice.nextPrice[7];
         float multiplier = 9;
         int id = 8;
 
@@ -151,7 +150,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeNine()
     {
-        float price = showPrice.nextprice[8];
+        float price = showPrice.nextPrice[8];
         float multiplier = 18;
         int id = 9;
 
@@ -166,7 +165,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeTen()
     {
-        float price = showPrice.nextprice[9];
+        float price = showPrice.nextPrice[9];
         float multiplier = 36;
         int id = 10;
 
@@ -181,7 +180,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeEleven()
     {
-        float price = showPrice.nextprice[10];
+        float price = showPrice.nextPrice[10];
         float multiplier = 72;
         int id = 11;
 
@@ -196,7 +195,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeTwelf()
     {
-        float price = showPrice.nextprice[11];
+        float price = showPrice.nextPrice[11];
         float multiplier = 144;
         int id = 12;
 
@@ -211,7 +210,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeThirteen()
     {
-        float price = showPrice.nextprice[12];
+        float price = showPrice.nextPrice[12];
         float multiplier = 288;
         int id = 13;
 
@@ -226,7 +225,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeFourteen()
     {
-        float price = showPrice.nextprice[13];
+        float price = showPrice.nextPrice[13];
         float multiplier = 576;
         int id = 14;
 
@@ -241,7 +240,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeFifteen()
     {
-        float price = showPrice.nextprice[14];
+        float price = showPrice.nextPrice[14];
         float multiplier = 1150;
         int id = 15;
 
@@ -256,7 +255,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeSixteen()
     {
-        float price = showPrice.nextprice[15];
+        float price = showPrice.nextPrice[15];
         float multiplier = 7500;
         int id = 16;
 
@@ -271,7 +270,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeSeventeen()
     {
-        float price = showPrice.nextprice[16];
+        float price = showPrice.nextPrice[16];
         float multiplier = 15000;
         int id = 17;
 
@@ -286,7 +285,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeEigthteen()
     {
-        float price = showPrice.nextprice[17];
+        float price = showPrice.nextPrice[17];
         float multiplier = 30000;
         int id = 18;
 
@@ -301,7 +300,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeNineteen()
     {
-        float price = showPrice.nextprice[18];
+        float price = showPrice.nextPrice[18];
         float multiplier = 60000;
         int id = 19;
 
@@ -316,7 +315,7 @@ public class ShopHandler : MonoBehaviour
 
     public void BuyUpgradeClick(float func_multiplier, int func_id)
     {
-        float price = showPrice.nextprice[func_id - 1];
+        float price = showPrice.nextPrice[func_id - 1];
         float multiplier = func_multiplier;
         int id = func_id;
 
@@ -334,7 +333,7 @@ public class ShopHandler : MonoBehaviour
         if(this.score > price)
         {
             this.scoreManager.GetComponent<ScoreHandler>().score = this.score - price;
-            this.scoreManager.GetComponent<ScoreHandler>().scoremultiplier = this.scoreManager.GetComponent<ScoreHandler>().scoremultiplier + multiplier;
+            this.scoreManager.GetComponent<ScoreHandler>().scoreMultiplier = this.scoreManager.GetComponent<ScoreHandler>().scoreMultiplier + multiplier;
             this.isBought = true;
         }
         else

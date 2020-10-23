@@ -9,19 +9,9 @@ public class ScreenManager : MonoBehaviour
     public GameObject shop;
     public GameObject main;
     public GameObject character;
-    public GameObject idleshop;
+    public GameObject idleShop;
     public GameObject prestige;
     public NumberOfUpgrades numberOfUpgrades;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void ToggleShop()
     {
@@ -55,15 +45,15 @@ public class ScreenManager : MonoBehaviour
 
     public void ToggleIdleShop()
     {
-        if(idleshop.active)
+        if(idleShop.active)
         {
             main.SetActive(true);
-            idleshop.SetActive(false);
+            idleShop.SetActive(false);
         }
         else
         {
             main.SetActive(false);
-            idleshop.SetActive(true);
+            idleShop.SetActive(true);
 
         }
     }

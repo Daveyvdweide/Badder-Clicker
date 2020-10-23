@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class ClickingSoundHandler : MonoBehaviour
 {
-     public AudioClip[] audioClips;
-     public AudioClip[] badderClips;
-     public AudioSource audioSource;
-     public AudioListener audioListener;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public AudioClip[] audioClips;
+    public AudioClip[] badderClips;
+    public AudioSource audioSource;
+    public AudioListener audioListener;
 
     public void PlayRandom()
     {

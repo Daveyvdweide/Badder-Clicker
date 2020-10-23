@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class ShowPrice : MonoBehaviour
 {
-    public float[] startprice;
-    public float[] nextprice;
+    public float[] startPrice;
+    public float[] nextPrice;
 
     public NumberOfUpgrades numberOfUpgrades;
-    void Start()
+
+    private void Start()
     {
         CalculatePrice();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         CalculatePrice();
     }
 
-    void CalculatePrice()
+    public void CalculatePrice()
     {
-        for (int i = 0; i < this.startprice.Length; i++)
+        for (int i = 0; i < this.startPrice.Length; i++)
         {
-            this.nextprice[i] = this.startprice[i] + (this.startprice[i] / 10 + (numberOfUpgrades.upgradesCount[i] * 2 * (i + 1)));
+            this.nextPrice[i] = this.startPrice[i] + (this.startPrice[i] / 10 + (numberOfUpgrades.upgradesCount[i] * 2 * (i + 1)));
         }
     }
 }

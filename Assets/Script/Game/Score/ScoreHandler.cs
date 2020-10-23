@@ -6,38 +6,28 @@ using UnityEngine.UI;
 public class ScoreHandler : MonoBehaviour
 {
     public float score = 0;
-    public float scoremultiplier = 1;
-    public float scorepersecond = 1;
-    private float timeelapsed = 0f;
-
-    public void Start()
-    {
-   
-    }
+    public float scoreMultiplier = 1;
+    public float scorePerSecond = 1;
+    private float timeElapsed = 0f;
 
     public void Update()
     {
-        Debug.Log(scorepersecond);
-        if(this.timeelapsed > 1f)
+        Debug.Log(scorePerSecond);
+        if(this.timeElapsed > 1f)
         {
             Debug.Log(this.score);
-            this.score = this.score + this.scorepersecond;
+            this.score = this.score + this.scorePerSecond;
             Debug.Log(this.score);
-            this.timeelapsed = 0f;
+            this.timeElapsed = 0f;
         } 
         else 
         {
-            this.timeelapsed = this.timeelapsed += Time.deltaTime;
+            this.timeElapsed = this.timeElapsed += Time.deltaTime;
         }
-    }
-
-    public void ReturnScore()
-    {
-
     }
 
     public void AddScore(string test)
     {
-        this.score = this.score + (1 * this.scoremultiplier); 
+        this.score = this.score + (1 * this.scoreMultiplier); 
     }
 }

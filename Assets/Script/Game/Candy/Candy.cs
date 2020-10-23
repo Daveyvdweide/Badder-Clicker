@@ -5,15 +5,10 @@ using UnityEngine;
 public class Candy : MonoBehaviour
 {
     public GameObject candy;
-    void Start()
+
+    private void Start()
     {
         StartCoroutine(DespawnCandy(5f));   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private IEnumerator DespawnCandy(float seconds)

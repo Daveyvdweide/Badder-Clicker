@@ -8,17 +8,12 @@ public class IdleShowNextMultiplier : MonoBehaviour
     public Text buttonText;
     public IdleNumberOfUpgrades idleNumberOfUpgrades;
     private float multiplier;
-    private float upgradecount;
-    void Start()
-    {
-        
-    }
+    private float upgradeCount;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        upgradecount = idleNumberOfUpgrades.upgradesCount[0];
-        this.multiplier = 0.2f + (upgradecount * 0.01f);
+        upgradeCount = idleNumberOfUpgrades.upgradesCount[0];
+        this.multiplier = 0.2f + (upgradeCount * 0.01f);
         this.buttonText.GetComponent<Text>().text = "+ " + this.multiplier + " Candy per second";
     }
 }

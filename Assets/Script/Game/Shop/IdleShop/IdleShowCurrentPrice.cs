@@ -7,19 +7,14 @@ public class IdleShowCurrentPrice : MonoBehaviour
 {
     public IdleShowPrice idleShowPrice;
     public int idleUpgradeNumber;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         this.ShowCurrentUpgradePrice(this.idleUpgradeNumber);
     }
 
     public void ShowCurrentUpgradePrice(int idleUpgradeNumber)
     {
-        gameObject.GetComponent<Text>().text = idleShowPrice.idlenextprice[idleUpgradeNumber - 1].ToString();
+        gameObject.GetComponent<Text>().text = idleShowPrice.idlenextPrice[idleUpgradeNumber - 1].ToString();
     }
 }
